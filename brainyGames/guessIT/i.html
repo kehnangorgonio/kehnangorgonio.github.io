@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Guessing Game - EH?? </title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+ 
+ <center>
+ <div class="main"> 
+  <h1> GUESS THE NUMBER! </h1>
+  <p id="heh"> from [ 1 ] to [ 9999999999999999999999999999999999999999 ] without any hints!</p>
+  <input placeholder=" 💀 - promise you cant! " type="number" id="guess">
+  <button onclick="checkGuess()">GUESS</button>
+  <p id="message"></p>
+ 
+ 
+
+ <a href="index.html">
+  <button class="first" id="diff">
+    EASY
+  </button>
+ </a>
+ 
+ <a href="n.html">
+  <button id="diff">
+    NORMAL
+  </button>
+ </a>
+ 
+ <a href="m.html">
+  <button id="diff">
+    MEDIUM
+  </button>
+ </a>
+ 
+ <a href="h.html">
+  <button id="diff">
+    HARD
+  </button>
+ </a>
+  
+ <a href="s.html">
+  <button id="diff">
+    SUPRA
+  </button>
+ </a>
+ 
+ 
+  <a href="s.html">
+ <button id="diff">
+   EH?
+ </button>
+  </a>
+  
+ </div>
+ </center>
+ 
+ <div class="difficulty">
+  
+ </div>
+</body>
+</html>
+
+<style type="text/css">
+ body{
+  background-color: #133e40;
+  font-family: arial;
+  color: white;
+ }
+ 
+ .main {
+  background-color: #401337;
+  margin-top: 250px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 15px;
+ }
+ 
+ .first{
+ margin-top: 50px;
+ }
+ 
+ #guess {
+  
+ }
+ 
+ #diff {
+  background-color: black;
+  color: white;
+  border-radius: 3px;
+ }
+ 
+ #guess:hover {
+  background-color: black;
+  color: white;
+ }
+ 
+ #heh {
+ paddibg-bottom: 30px;
+ }
+ 
+</style>
+
+
+<script>
+ // Generate a random number between 1 and 100
+ let randomNumber = Math.floor(Math.random() * 9999999999999999999999999999999999999999) + 1;
+
+ 
+ function checkGuess() {
+ // Get the user's guess from the input field
+ let guess = document.getElementById("guess").value;
+ guess = parseInt(guess);
+ 
+ // Check if the guess is valid (number between 1 and 100)
+ if (isNaN(guess) || guess < 1 || guess > 9999999999999999999999999999999999999999) {
+ document.getElementById("message").innerHTML = "Oops! thats not valid! enter 1 to 10 only";
+ return;
+ }
+ 
+ // Check if the guess is correct
+ if (guess === randomNumber) {
+ document.getElementById("message").innerHTML = "oh god how did a person see this text???!!! yeah you see this message because you guess it right!! the number was " + randomNumber;
+ } else if (guess < randomNumber) {
+ document.getElementById("message").innerHTML = "You think ill give hint?";
+ } else {
+ document.getElementById("message").innerHTML = "You think ill give hint?";
+ }
+ }
+ 
+</script>
